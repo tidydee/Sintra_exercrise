@@ -30,16 +30,7 @@ end
 
 get '/messages/:id' do
   @message = Message.find params[:id]
-  @messages = Message.all
+  @messages = Message.where( author: @message.author )
   erb :'messages/show'
 end
-
-# def uri?(string)
-#   uri = URI.parse(string)
-#   %w( http https ).include?(uri.scheme)
-# rescue URI::BadURIError
-#   false
-# rescue URI::InvalidURIError
-#   false
-# end
 

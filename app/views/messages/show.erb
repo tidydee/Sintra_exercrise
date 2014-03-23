@@ -12,7 +12,7 @@
 </h3>
 
 <% @messages.each do |message| %>
-  <% if @message.author == message.author %>
+ 
     <div class="message">
     <h3><a href="/messages/<%= message.id %>"><small>(by: <%= message.author %>)</small></a></h3>
       
@@ -22,7 +22,7 @@
 
       <hr>
     </div>
-  <% end %>
+  
 <% end %>
 
 

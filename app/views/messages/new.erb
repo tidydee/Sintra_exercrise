@@ -13,15 +13,15 @@
 <form action="/messages" method="POST"> 
   <div>
     <label>Author:</label>
-    <input type="text" name="author", placeholder="Minimum of 3 characters", value="<%= @message && @message.author %>">
+    <input type="text" name="author", placeholder="Minimum of 3 characters", value="<%= @message.author %>">
   </div>
   <div>
     <label>Subject:</label>
-    <input type="text" name="title", placeholder="Minimum of 3 characters", value="<%= @message && @message.title %>">
+    <input type="text" name="title", placeholder="Minimum of 3 characters", value="<%= @message.title %>">
   </div>
   <div>
     <label>Content:</label>
-    <input type="text" name="content", placeholder="Minimum of 3 characters", value="<%= @message && @message.content %>">
+    <input type="text" name="content", placeholder="Minimum of 3 characters", value="<%= @message.content %>">
   </div>
   <div>
     <input type="submit" value="Submit">

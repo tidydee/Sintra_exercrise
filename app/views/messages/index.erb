@@ -2,11 +2,13 @@
   <div class="message">
     <h3><a href="/messages/<%= message.id %>"><small>(by: <%= message.author %>)</small></a></h3>
     <p>
-      <%= message.content %>&nbsp;&nbsp;<a href="<%= message.url %>"><%= message.url %></a>
+      <strong><%= message.content %></strong>&nbsp;&nbsp;<a href="<%= message.url %>"><%= message.url %></a>
     </p>
 
-    
-    
+    <p>
+      <small><strong>Created at:</strong>&nbsp;<%= message.created_at %> <!-- <strong>Updated at:</strong>&nbsp;<%= message.updated_at %></small> -->
+    </p>
+    <hr>
   </div>
 <% end %>
 

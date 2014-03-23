@@ -21,7 +21,7 @@ end
 post '/messages' do
   # binding.pry
   @message = Message.new(
-    title: params[:title],
+    # title: params[:title],
     content: params[:content],
     author:  params[:author]
   )

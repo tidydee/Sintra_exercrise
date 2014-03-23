@@ -4,8 +4,38 @@
 </h1>
 
 <p>
-  <%= @message.content  %>&nbsp;&nbsp;<%= @message.url %>
+  <%= @message.content %>&nbsp;&nbsp;<%= @message.url %>
 </p>
 
-<hr/>
+<h3>
+  Other messages by: <%= @message.author %>
+</h3>
+
+<% @messages.each do |message| %>
+  <% if @message.author == message.author %>
+    <div class="message">
+    <h3><a href="/messages/<%= message.id %>"><small>(by: <%= message.author %>)</small></a></h3>
+      
+      <p>
+        <strong><%= message.content %></strong>&nbsp;&nbsp;<a href="<%= message.url %>"><%= message.url %></a>
+      </p>
+
+      <hr>
+    </div>
+  <% end %>
+<% end %>
+
+
 <a href="/messages">Back to All Messages</a>
+
+
+
+
+<hr/>
+
+
+
+
+
+
+

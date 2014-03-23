@@ -13,17 +13,13 @@ get '/messages/new' do
   erb :'messages/new'
 end
 
-get '/messages/:id' do
-  @message = Message.find params[:id]
-  erb :'messages/show'
-end
-
 post '/messages' do
   # binding.pry
   @message = Message.new(
     # title: params[:title],
     content: params[:content],
-    author:  params[:author]
+    author:  params[:author],
+    url: params[:url]
   )
   if @message.save
     redirect '/messages'
@@ -32,3 +28,16 @@ post '/messages' do
   end
 end
 
+get '/messages/:id' do
+  @message = Message.find params[:id]
+  erb :'messages/show'
+end
+
+def uri?(string)
+  uri = URI.parse(string)
+  %w( http https ).include?(uri.scheme)
+rescue URI::BadURIError
+  false
+rescue URI::InvalidURIError
+  false
+end
